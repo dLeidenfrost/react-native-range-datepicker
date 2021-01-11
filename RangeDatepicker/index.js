@@ -57,6 +57,7 @@ export default class RangeDatepicker extends Component {
 	};
 
 
+  /*
 	static propTypes = {
 		initialMonth: PropTypes.string,
 		dayHeadings: PropTypes.arrayOf(PropTypes.string),
@@ -86,6 +87,7 @@ export default class RangeDatepicker extends Component {
 		showSelectionInfo: PropTypes.bool,
 		showButton: PropTypes.bool,
 	}
+  */
 
 	componentWillReceiveProps(nextProps) {
 		this.setState({availableDates: nextProps.availableDates});

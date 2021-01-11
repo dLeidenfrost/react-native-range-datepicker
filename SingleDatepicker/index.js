@@ -42,6 +42,7 @@ export default class RangeDatepicker extends Component {
 	};
 
 
+  /*
 	static propTypes = {
 		initialMonth: PropTypes.string,
 		dayHeadings: PropTypes.arrayOf(PropTypes.string),
@@ -59,6 +60,7 @@ export default class RangeDatepicker extends Component {
 		infoStyle: PropTypes.object,
 		infoContainerStyle: PropTypes.object,
 	}
+  */
 
 	componentWillReceiveProps(nextProps) {
 		this.setState({availableDates: nextProps.availableDates});
