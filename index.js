@@ -1,5 +1,5 @@
 'use strict'
-import RangeDatepicker from './RangeDatepicker';
+import RangeDatepicker from './RangeDatepicker/newIndex';
 import SingleDatepicker from './SingleDatepicker';
 
 export { SingleDatepicker };
