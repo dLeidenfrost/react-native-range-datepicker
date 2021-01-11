@@ -56,39 +56,6 @@ export default class RangeDatepicker extends Component {
 		showButton: true,
 	};
 
-
-  /*
-	static propTypes = {
-		initialMonth: PropTypes.string,
-		dayHeadings: PropTypes.arrayOf(PropTypes.string),
-		availableDates: PropTypes.arrayOf(PropTypes.string),
-		maxMonth: PropTypes.number,
-		buttonColor: PropTypes.string,
-		buttonContainerStyle: PropTypes.object,
-		startDate: PropTypes.string,
-		untilDate: PropTypes.string,
-		minDate: PropTypes.string,
-		maxDate: PropTypes.string,
-		showReset: PropTypes.bool,
-		showClose: PropTypes.bool,
-		ignoreMinDate: PropTypes.bool,
-    isHistorical: PropTypes.bool,
-		onClose: PropTypes.func,
-		onSelect: PropTypes.func,
-		onConfirm: PropTypes.func,
-		placeHolderStart: PropTypes.string,
-		placeHolderUntil: PropTypes.string,
-		selectedBackgroundColor: PropTypes.string,
-		selectedTextColor: PropTypes.string,
-		todayColor: PropTypes.string,
-		infoText: PropTypes.string,
-		infoStyle: PropTypes.object,
-		infoContainerStyle: PropTypes.object,
-		showSelectionInfo: PropTypes.bool,
-		showButton: PropTypes.bool,
-	}
-  */
-
 	componentWillReceiveProps(nextProps) {
 		this.setState({availableDates: nextProps.availableDates});
 	}

@@ -41,27 +41,6 @@ export default class RangeDatepicker extends Component {
 		infoContainerStyle: {marginRight: 20, paddingHorizontal: 20, paddingVertical: 5, backgroundColor: 'green', borderRadius: 20, alignSelf: 'flex-end'},
 	};
 
-
-  /*
-	static propTypes = {
-		initialMonth: PropTypes.string,
-		dayHeadings: PropTypes.arrayOf(PropTypes.string),
-		availableDates: PropTypes.arrayOf(PropTypes.string),
-		maxMonth: PropTypes.number,
-		minDate: PropTypes.string,
-		maxDate: PropTypes.string,
-		showClose: PropTypes.bool,
-		onClose: PropTypes.func,
-		onSelect: PropTypes.func,
-		selectedBackgroundColor: PropTypes.string,
-		selectedTextColor: PropTypes.string,
-		todayColor: PropTypes.string,
-		infoText: PropTypes.string,
-		infoStyle: PropTypes.object,
-		infoContainerStyle: PropTypes.object,
-	}
-  */
-
 	componentWillReceiveProps(nextProps) {
 		this.setState({availableDates: nextProps.availableDates});
 	}
