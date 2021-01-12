@@ -13,6 +13,7 @@ import {
 import Month from './Month';
 // import styles from './styles';
 import moment from 'moment';
+import 'moment/locale';
 
 export default class RangeDatepicker extends Component {
 	constructor(props) {
@@ -28,12 +29,7 @@ export default class RangeDatepicker extends Component {
 		this.handleConfirmDate = this.handleConfirmDate.bind(this);
 		this.handleRenderRow = this.handleRenderRow.bind(this);
     // Add locale
-    try {
-      require(`moment/locale/${props.locale}`);
-      moment.locale(props.locale);
-    } catch (err) {
-      console.error(err);
-    }
+    moment.locale(props.locale);
 	}
 
 	static defaultProps = {
