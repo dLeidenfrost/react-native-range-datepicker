@@ -33,6 +33,7 @@ export default class RangeDatepicker extends Component {
 		maxMonth: 12,
 		buttonColor: 'green',
 		buttonContainerStyle: {},
+    confirmButtonTitle: 'Select date',
 		showReset: true,
 		showClose: true,
 		ignoreMinDate: false,
@@ -61,6 +62,7 @@ export default class RangeDatepicker extends Component {
 		infoContainerStyle: {marginRight: 20, paddingHorizontal: 20, paddingVertical: 5, backgroundColor: 'green', borderRadius: 20, alignSelf: 'flex-end'},
 		showSelectionInfo: true,
 		showButton: true,
+    confirmButtonTextStyle: { color: 'white' },
 	};
 
 	componentWillReceiveProps(nextProps) {
@@ -276,12 +278,14 @@ export default class RangeDatepicker extends Component {
 					{
 						this.props.showButton ? 
 						(
-						<View style={[styles.buttonWrapper, this.props.buttonContainerStyle]}>
-							<Button
-								title="Select Date" 
-								onPress={this.handleConfirmDate}
-								color={this.props.buttonColor} />
-						</View>
+						<TouchableOpacity
+              onPress={this.handleConfirmDate}
+              style={[styles.buttonWrapper, this.props.buttonContainerStyle, { backgroundColor: this.props.buttonColor }]}
+            >
+              <Text style={this.props.confirmButtonTextStyle}>
+                {this.props.confirmButtonTitle}
+              </Text>
+						</TouchableOpacity>
 						) : null
 					}	
 				</View>
@@ -299,8 +303,8 @@ const styles = StyleSheet.create({
 		paddingVertical: 10,
 		paddingHorizontal: 15,
 		backgroundColor: 'white',
-		borderTopWidth: 1,
-		borderColor: '#ccc',
-		alignItems: 'stretch'
+    flexDirection: 'row',
+    justifyContent: 'center',
+    elevation: 5,
 	},
 });
