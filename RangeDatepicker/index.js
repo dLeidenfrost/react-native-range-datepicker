@@ -171,6 +171,7 @@ export default class RangeDatepicker extends Component {
       maxDate,
       monthTitleStyle,
       monthDividerStyle,
+      betweenTextColor,
     } = this.props;
 		let { availableDates, startDate, untilDate } = this.state;
 
