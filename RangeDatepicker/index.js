@@ -43,6 +43,9 @@ export default class RangeDatepicker extends Component {
 		placeHolderStart: 'Start Date',
 		placeHolderUntil: 'Until Date',
 		selectedBackgroundColor: 'green',
+    startDateBackgroundColor: 'green',
+    endDateBackgroundColor: 'green',
+    betweenBackgroundColor: 'green',
 		selectedTextColor: 'white',
 		todayColor: 'green',
 		startDate: '',
@@ -144,10 +147,18 @@ export default class RangeDatepicker extends Component {
 	}
 
 	handleRenderRow(month, index) {
-		const { selectedBackgroundColor, selectedTextColor, todayColor, ignoreMinDate, minDate, maxDate } = this.props;
+		const {
+      selectedBackgroundColor,
+      startDateBackgroundColor,
+      endDateBackgroundColor,
+      betweenBackgroundColor,
+      selectedTextColor,
+      todayColor,
+      ignoreMinDate,
+      minDate,
+      maxDate,
+    } = this.props;
 		let { availableDates, startDate, untilDate } = this.state;
-
-
 
 		if(availableDates && availableDates.length > 0){
 			availableDates = availableDates.filter(function(d){
@@ -165,7 +176,14 @@ export default class RangeDatepicker extends Component {
 				minDate={minDate ? moment(minDate, 'YYYYMMDD') : minDate}
 				maxDate={maxDate ? moment(maxDate, 'YYYYMMDD') : maxDate}
 				ignoreMinDate={ignoreMinDate}
-				dayProps={{selectedBackgroundColor, selectedTextColor, todayColor}}
+				dayProps={{
+          selectedBackgroundColor,
+          startDateBackgroundColor,
+          endDateBackgroundColor,
+          betweenBackgroundColor,
+          selectedTextColor,
+          todayColor,
+        }}
 				month={month} />
 		)
 	}

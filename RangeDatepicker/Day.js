@@ -33,15 +33,15 @@ export default class Day extends React.Component {
 				textDayStyle = {color: dayProps.selectedTextColor};
 				break;
 			case "first" :
-				dayStyle = {backgroundColor : dayProps.selectedBackgroundColor, borderBottomLeftRadius: Math.floor(DEVICE_WIDTH / 7), borderTopLeftRadius: Math.floor(DEVICE_WIDTH / 7), width: "14.28%" }
+				dayStyle = {backgroundColor : dayProps.startDateBackgroundColor, borderBottomLeftRadius: Math.floor(DEVICE_WIDTH / 7), borderTopLeftRadius: Math.floor(DEVICE_WIDTH / 7), width: "14.28%" }
 				textDayStyle = {color: dayProps.selectedTextColor};
 				break;
 			case "last" :
-				dayStyle = {backgroundColor : dayProps.selectedBackgroundColor, borderBottomRightRadius: Math.floor(DEVICE_WIDTH / 7), borderTopRightRadius: Math.floor(DEVICE_WIDTH / 7), width: "14.28%" }
+				dayStyle = {backgroundColor : dayProps.endDateBackgroundColor, borderBottomRightRadius: Math.floor(DEVICE_WIDTH / 7), borderTopRightRadius: Math.floor(DEVICE_WIDTH / 7), width: "14.28%" }
 				textDayStyle = {color: dayProps.selectedTextColor};
 				break;
 			case "between" :
-				dayStyle = {backgroundColor : dayProps.selectedBackgroundColor, width: "14.28%"}
+				dayStyle = {backgroundColor : dayProps.betweenBackgroundColor, width: "14.28%"}
 				textDayStyle = {color: dayProps.selectedTextColor};
 				break;
 			case "disabled" :
