@@ -42,10 +42,14 @@ export default class RangeDatepicker extends Component {
 		onConfirm: () => {},
 		placeHolderStart: 'Start Date',
 		placeHolderUntil: 'Until Date',
+    headerBackgroundColor: 'green',
+    closeIcon: null,
 		selectedBackgroundColor: 'green',
     startDateBackgroundColor: 'green',
     endDateBackgroundColor: 'green',
     betweenBackgroundColor: 'green',
+    headerTitle: '',
+    iconPath: '',
 		selectedTextColor: 'white',
 		todayColor: 'green',
 		startDate: '',
@@ -157,6 +161,7 @@ export default class RangeDatepicker extends Component {
       ignoreMinDate,
       minDate,
       maxDate,
+      monthTitleStyle,
     } = this.props;
 		let { availableDates, startDate, untilDate } = this.state;
 
@@ -184,7 +189,9 @@ export default class RangeDatepicker extends Component {
           selectedTextColor,
           todayColor,
         }}
-				month={month} />
+				month={month}
+        monthTitleStyle={monthTitleStyle}
+      />
 		)
 	}
 
@@ -236,13 +243,25 @@ export default class RangeDatepicker extends Component {
 							<Text style={this.props.infoStyle}>{this.props.infoText}</Text>
 						</View>
 					}
-					<View style={styles.dayHeader}>
-						{
-							this.props.dayHeadings.map((day, i) => {
-								return (<Text style={{width: "14.28%", textAlign: 'center'}} key={i}>{day}</Text>)
-							})
-						}
-					</View>
+          <View style={{ backgroundColor: this.props.headerBackgroundColor }}>
+            <View style={{ flexDirection: 'row', paddingVertical: 24, justifyContent: 'center' }}>
+              <Image
+                style={{ width: 50, height: 50, resizeMode: 'contain' }}
+                source={this.props.iconPath}
+              />
+              <TouchableOpacity onPress={this.onClose} style={{ position: 'absolute', right: 0, padding: 24 }}>
+                {this.props.closeIcon || <Text>Close</Text>}
+              </TouchableOpacity>
+            </View>
+            <Text style={{ fontSize: 16, alignSelf: 'center', color: 'white' }}>{this.props.headerTitle}</Text>
+            <View style={styles.dayHeader}>
+              {
+                this.props.dayHeadings.map((day, i) => {
+                  return (<Text style={{width: "14.28%", textAlign: 'center', color: 'white'}} key={i}>{day}</Text>)
+                })
+              }
+            </View>
+          </View>
 					<FlatList
 						style={{ flex: 1 }}
 			            data={this.getMonthStack()}
@@ -273,7 +292,6 @@ export default class RangeDatepicker extends Component {
 const styles = StyleSheet.create({
 	dayHeader : {
 		flexDirection: 'row',
-		borderBottomWidth: 1,
 		paddingBottom: 10,
 		paddingTop: 10,
 	},
