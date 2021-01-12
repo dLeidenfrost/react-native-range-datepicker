@@ -266,7 +266,7 @@ export default class RangeDatepicker extends Component {
                 style={{ width: 50, height: 50, resizeMode: 'contain' }}
                 source={this.props.iconPath}
               />
-              <TouchableOpacity onPress={this.onClose} style={{ position: 'absolute', right: 0, padding: 24 }}>
+              <TouchableOpacity onPress={this.props.onClose} style={{ position: 'absolute', right: 0, padding: 24 }}>
                 {this.props.closeIcon || <Text>Close</Text>}
               </TouchableOpacity>
             </View>
