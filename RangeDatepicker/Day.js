@@ -42,7 +42,7 @@ export default class Day extends React.Component {
 				break;
 			case "between" :
 				dayStyle = {backgroundColor : dayProps.betweenBackgroundColor, opacity: .5, width: "14.28%"}
-				textDayStyle = {color: dayProps.selectedTextColor};
+				textDayStyle = {color: dayProps.betweenTextColor};
 				break;
 			case "disabled" :
 			case "blockout" :
