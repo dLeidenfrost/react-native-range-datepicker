@@ -13,7 +13,7 @@ import {
 import Month from './Month';
 // import styles from './styles';
 import moment from 'moment';
-import 'moment/locale';
+import 'moment/locale/es';
 
 export default class RangeDatepicker extends Component {
 	constructor(props) {
