@@ -7,6 +7,8 @@ import {
   FlatList,
   StyleSheet,
   Button,
+  Image,
+  TouchableOpacity,
 } from 'react-native';
 import Month from './Month';
 // import styles from './styles';
@@ -25,10 +27,18 @@ export default class RangeDatepicker extends Component {
 		this.onReset = this.onReset.bind(this);
 		this.handleConfirmDate = this.handleConfirmDate.bind(this);
 		this.handleRenderRow = this.handleRenderRow.bind(this);
+    // Add locale
+    try {
+      require(`moment/locale/${props.locale}`);
+      moment.locale(props.locale);
+    } catch (err) {
+      console.error(err);
+    }
 	}
 
 	static defaultProps = {
 		initialMonth: '',
+    locale: 'es',
 		dayHeadings: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
 		maxMonth: 12,
 		buttonColor: 'green',
