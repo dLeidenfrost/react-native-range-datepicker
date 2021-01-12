@@ -170,6 +170,7 @@ export default class RangeDatepicker extends Component {
       minDate,
       maxDate,
       monthTitleStyle,
+      monthDividerStyle,
     } = this.props;
 		let { availableDates, startDate, untilDate } = this.state;
 
@@ -181,25 +182,32 @@ export default class RangeDatepicker extends Component {
 		}
 
 		return (
-			<Month
-				onSelectDate={this.onSelectDate}
-				startDate={startDate}
-				untilDate={untilDate}
-				availableDates={availableDates}
-				minDate={minDate ? moment(minDate, 'YYYYMMDD') : minDate}
-				maxDate={maxDate ? moment(maxDate, 'YYYYMMDD') : maxDate}
-				ignoreMinDate={ignoreMinDate}
-				dayProps={{
-          selectedBackgroundColor,
-          startDateBackgroundColor,
-          endDateBackgroundColor,
-          betweenBackgroundColor,
-          selectedTextColor,
-          todayColor,
-        }}
-				month={month}
-        monthTitleStyle={monthTitleStyle}
-      />
+      <React.Fragment>
+        {
+          index > 0 &&
+          <View style={monthDividerStyle} />
+        }
+        <Month
+          onSelectDate={this.onSelectDate}
+          startDate={startDate}
+          untilDate={untilDate}
+          availableDates={availableDates}
+          minDate={minDate ? moment(minDate, 'YYYYMMDD') : minDate}
+          maxDate={maxDate ? moment(maxDate, 'YYYYMMDD') : maxDate}
+          ignoreMinDate={ignoreMinDate}
+          dayProps={{
+            selectedBackgroundColor,
+            startDateBackgroundColor,
+            endDateBackgroundColor,
+            betweenBackgroundColor,
+            selectedTextColor,
+            todayColor,
+            betweenTextColor,
+          }}
+          month={month}
+          monthTitleStyle={monthTitleStyle}
+        />
+      </React.Fragment>
 		)
 	}
 
@@ -302,7 +310,7 @@ export default class RangeDatepicker extends Component {
 const styles = StyleSheet.create({
 	dayHeader : {
 		flexDirection: 'row',
-		paddingBottom: 10,
+		paddingBottom: 16,
 		paddingTop: 10,
 	},
 	buttonWrapper : {
