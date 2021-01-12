@@ -171,6 +171,7 @@ export default class RangeDatepicker extends Component {
 	}
 
 	render(){
+      const {flatlistProps} = this.props;
 			return (
 				<View style={{backgroundColor: '#fff', zIndex: 1000, alignSelf: 'center', width: '100%', flex: 1}}>
 					{
@@ -231,7 +232,8 @@ export default class RangeDatepicker extends Component {
 							return this.handleRenderRow(item, index)
 						}}
 						keyExtractor = { (item, index) => index.toString() }
-			            showsVerticalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
+            {...flatlistProps}
 					/>
 
 					{
