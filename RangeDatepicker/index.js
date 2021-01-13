@@ -69,6 +69,7 @@ export default class RangeDatepicker extends Component {
 		showSelectionInfo: true,
 		showButton: true,
     confirmButtonTextStyle: { color: 'white' },
+    headerImage: '',
 	};
 
 	componentWillReceiveProps(nextProps) {
@@ -261,11 +262,8 @@ export default class RangeDatepicker extends Component {
 						</View>
 					}
           <View style={{ backgroundColor: this.props.headerBackgroundColor }}>
-            <View style={{ flexDirection: 'row', paddingVertical: 24, justifyContent: 'center' }}>
-              <Image
-                style={{ width: 50, height: 50, resizeMode: 'contain' }}
-                source={this.props.iconPath}
-              />
+            <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+              {this.props.headerImage}
               <TouchableOpacity onPress={this.props.onClose} style={{ position: 'absolute', right: 0, padding: 24 }}>
                 {this.props.closeIcon || <Text>Close</Text>}
               </TouchableOpacity>
