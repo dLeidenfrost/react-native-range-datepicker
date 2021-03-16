@@ -51,6 +51,7 @@ export default class RangeDatepicker extends Component {
 		placeHolderUntil: 'Until Date',
     headerBackgroundColor: 'green',
     closeIcon: null,
+    backIcon: null,
 		selectedBackgroundColor: 'green',
     startDateBackgroundColor: 'green',
     endDateBackgroundColor: 'green',
@@ -263,6 +264,12 @@ export default class RangeDatepicker extends Component {
 					}
           <View style={{ backgroundColor: this.props.headerBackgroundColor }}>
             <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+              {
+                this.props.backIcon &&
+                <TouchableOpacity onPress={this.props.onBack} style={{ position: 'absolute', left: 0, padding: 24 }}>
+                  {this.props.backIcon}
+                </TouchableOpacity>
+              }
               {this.props.headerImage}
               <TouchableOpacity onPress={this.props.onClose} style={{ position: 'absolute', right: 0, padding: 24 }}>
                 {this.props.closeIcon || <Text>Close</Text>}
